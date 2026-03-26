@@ -41,7 +41,7 @@ Unlike single-dimensional Q&A tests, ClawBench intentionally embeds real-world e
 
 ---
 
-**Evaluation Dimension**
+## Evaluation Dimension
 
 Based on real-world enterprise workflows, ClawBench conducts its evaluations across five core dimensions:
 
@@ -56,38 +56,38 @@ Data Processing and Analysis：Focuses on measuring the LLM's ability to clean u
 Software Engineering：Examines the Agent's end-to-end programming practices in real-world development environments, covering complex log troubleshooting, code bug diagnosis, automated environment provisioning, and system configuration refactoring.
 
 
-**Evaluation Methodology**
+## Evaluation Methodology
 
 ClawBench abandons traditional static Q&A testing in favor of an evaluation architecture that highly simulates real-world enterprise development environments. Our methodology is built upon two core pillars:
 
-***Isolated Sandboxed Execution***
+**Isolated Sandboxed Execution**
 
 To test an LLM's true operational capability, every Agent in ClawBench runs inside a strictly isolated virtual sandbox. Before a task begins, the sandbox is provisioned with specific business assets (e.g., dirty CSV files, system logs, or configuration manifests). The Agent must complete the workflow by actually invoking tools, reading/writing files, or executing code. 
 
-***Tri-fold Grading Mechanism***
+**Tri-fold Grading Mechanism**
 
 Because our 30 tasks span vastly different domains—from data parsing to creative business reporting—a one-size-fits-all grading rule is inadequate. Therefore, ClawBench designates one of the following three grading types for each specific task:
 
-Automated：
+***Automated：***
 
 Best For: Tasks with deterministic outcomes and strict formatting constraints (e.g., API config setup, JSON data ETL).
 
 How it Works: Pure Python scripts execute automated assertions. These scripts deeply inspect workspace artifacts and structured schemas, often calculating a "Dynamic Ground Truth" at runtime to perform 100% precise, byte-level comparisons against the Agent's output.
 
-LLM Judge Grading
+***LLM Judge Grading***
 
 Best For: Tasks emphasizing qualitative analysis, content generation, and logical reasoning (e.g., script creation, market research reports).
 
 How it Works: Employs frontier LLMs as "expert judges." Guided by highly concrete, unambiguous scoring rubrics, the judge conducts a multi-dimensional, subjective review of the Agent's methodological logic, tone, and business acumen.
 
-Hybrid Grading
+***Hybrid Grading***
 
 Best For: Complex workflows that require both hard engineering constraints and soft business communication (e.g., anomaly detection, sales forecasting).
 
 How it Works: Combines the strengths of both approaches. Automated scripts secure the objective baseline (e.g., math accuracy, strict negative constraints against PII leakage), while the LLM Judge evaluates the high-level business insights. The final score is a weighted combination (typically 50/50) of both assessments.
 
 
-**Task Instruction**
+## Task Instruction
 
 | Category | Task Name | Grading Type | Task Description |
 | :--- | :--- | :--- | :--- |
