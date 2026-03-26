@@ -10,6 +10,25 @@ Unlike single-dimensional Q&A tests, ClawBench intentionally embeds real-world e
 
 ![ClawBench Leaderboard](clawbench-leaderboard.png)
 
+![CLAW SCORE vs. COST](clawbench-graph-cos.png)
+![CLAW SCORE vs. SPEED](clawbench-graph-speed.png)
+
+**Office Collaboration**
+![Office Collaboration](office-collaboration.png)
+
+**Information Retrieval and Research**
+![Information Retrieval and Research](information-retrieval-and-research.png)
+
+**Content Creation**
+![Content Creation](content-creation.png)
+
+**Data Processing and Analysis**
+![Data Processing and Analysis](data-processing-and-analysis.png)
+
+**Software Engineering**
+![Software Engineering](software-engineering.png)
+
+
 > **Note**: All data is rigorously tested within the ClawBench isolated sandbox environment to ensure fairness, security, and zero bias.
 
 
