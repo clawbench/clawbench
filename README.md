@@ -46,9 +46,13 @@ Unlike single-dimensional Q&A tests, ClawBench intentionally embeds real-world e
 Based on real-world enterprise workflows, ClawBench conducts its evaluations across five core dimensions:
 
 Office Collaboration：Evaluates the LLM's automated scheduling and document processing capabilities in daily office scenarios, covering logical reasoning tasks like meeting coordination, multi-step financial accounting, and cross-departmental asset provisioning.
+
 Information Retrieval and Research：Assesses the LLM's ability to scrape data across sources, comprehend reading materials, and utilize long-term memory. It requires the LLM to accurately extract and synthesize high-value commercial and industry insights from massive noise.
+
 Content Creation：Tests the model's performance in long-text generation, cross-modal tool invocation, and style transformation. It emphasizes the ability to output professional content and conduct business compliance audits under strict formatting constraints.
+
 Data Processing and Analysis：Focuses on measuring the LLM's ability to clean unstructured and dirty data, perform relational analysis, detect anomalies, and forecast business trends. It requires the generation of accurate business insights and automated reports.
+
 Software Engineering：Examines the Agent's end-to-end programming practices in real-world development environments, covering complex log troubleshooting, code bug diagnosis, automated environment provisioning, and system configuration refactoring.
 
 
@@ -56,15 +60,16 @@ Software Engineering：Examines the Agent's end-to-end programming practices in 
 
 ClawBench abandons traditional static Q&A testing in favor of an evaluation architecture that highly simulates real-world enterprise development environments. Our methodology is built upon two core pillars:
 
-Isolated Sandboxed Execution
+***Isolated Sandboxed Execution***
 
 To test an LLM's true operational capability, every Agent in ClawBench runs inside a strictly isolated virtual sandbox. Before a task begins, the sandbox is provisioned with specific business assets (e.g., dirty CSV files, system logs, or configuration manifests). The Agent must complete the workflow by actually invoking tools, reading/writing files, or executing code. 
 
-Tri-fold Grading Mechanism
+***Tri-fold Grading Mechanism***
 
 Because our 30 tasks span vastly different domains—from data parsing to creative business reporting—a one-size-fits-all grading rule is inadequate. Therefore, ClawBench designates one of the following three grading types for each specific task:
 
 Automated：
+
 Best For: Tasks with deterministic outcomes and strict formatting constraints (e.g., API config setup, JSON data ETL).
 
 How it Works: Pure Python scripts execute automated assertions. These scripts deeply inspect workspace artifacts and structured schemas, often calculating a "Dynamic Ground Truth" at runtime to perform 100% precise, byte-level comparisons against the Agent's output.
